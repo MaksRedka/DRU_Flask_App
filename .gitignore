@@ -1,0 +1,10 @@
+
+/.venv
+/.pytest_cahce
+.vscode
+/.__pycache__
+.DS_Store
+**/__pycache__
+
+.pyc
+
