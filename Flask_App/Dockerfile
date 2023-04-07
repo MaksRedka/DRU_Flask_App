@@ -1,11 +1,11 @@
 FROM python:3.7
 
-WORKDIR /Flask App
+WORKDIR /Flask_App
 
 COPY requirements.txt ./
 RUN pip3 install -r requirements.txt
 
-RUN export PYTHONPATH='${PYTHONPATH}:/Flask App'
+RUN export PYTHONPATH='${PYTHONPATH}:/Flask_App'
 
 COPY . .
 
