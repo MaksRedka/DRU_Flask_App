@@ -1,9 +1,12 @@
-from flask import Flask, request
+from flask import Flask, request, send_file
 from flask import current_app as app
 
 from controllers.actor import *
 from controllers.movie import *
 
+@app.route('/', methods=['GET'])
+def basic():
+    return get_all_actors()
 
 @app.route('/api/actors', methods=['GET'])  
 def actors():  
@@ -59,3 +62,7 @@ def movie_relation():
         return movie_add_relation()
     elif request.method == 'DELETE':
         return movie_clear_relations()  
+
+@app.route('/cat', methods=['GET'])
+def cat():
+    return send_file('../statik/cat.jpeg', 'image/jpeg')

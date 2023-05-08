@@ -1,5 +1,5 @@
 
-/.venv
+venv
 /.pytest_cahce
 .vscode
 /.__pycache__
