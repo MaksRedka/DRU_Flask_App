@@ -4,6 +4,8 @@ from flask import current_app as app
 from controllers.actor import *
 from controllers.movie import *
 
+import time
+
 @app.route('/', methods=['GET'])
 def basic():
     return get_all_actors()
@@ -66,3 +68,8 @@ def movie_relation():
 @app.route('/cat', methods=['GET'])
 def cat():
     return send_file('../statik/cat.jpeg', 'image/jpeg')
+
+@app.route('/wait', methods=['GET'])
+def wait():
+    time.sleep(5)
+    return f"<h1>You have waint some time. Thank you))</h1>"
